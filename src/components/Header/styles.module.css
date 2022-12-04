@@ -6,3 +6,17 @@
   height: 200px;
   background: var(--gray-700);
 }
+
+.taskForm {
+  width: 736px;
+
+  position: absolute;
+  top: 174px;
+}
+
+@media (max-width: 736px) {
+  .taskForm {
+    padding: 0 1rem;
+    width: 100%;
+  }
+}

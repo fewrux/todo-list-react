@@ -18,3 +18,9 @@
   cursor: pointer;
   background: var(--blue);
 }
+
+@media (max-width: 768px) {
+  .button {
+    width: 100%;
+  }
+}
