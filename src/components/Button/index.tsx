@@ -4,13 +4,14 @@ import { PlusCircle } from 'phosphor-react'
 import styles from './styles.module.css';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  type: 'button' | 'submit' | 'reset' | undefined;
   children: string;
 }
 
-export function Button({children, ...rest}: ButtonProps) {
+export function Button({type, children, ...rest}: ButtonProps) {
   return (
     <button
-      type="button"
+      type={type}
       className={styles.button}
       {...rest}
     >

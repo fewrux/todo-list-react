@@ -1,9 +1,17 @@
+import { ReactNode } from 'react';
 import styles from './styles.module.css';
 
-export function Header() {
+interface HeaderProps {
+  children: ReactNode;
+}
+
+export function Header({ children }: HeaderProps) {
   return (
-    <nav className={styles.header}>
+    <header className={styles.header}>
       <img src="/src/assets/logo.png" alt="To-do List Logo" />
-    </nav>
+      <div className={styles.taskForm}>
+        {children}
+      </div>
+    </header>
   )
 }
