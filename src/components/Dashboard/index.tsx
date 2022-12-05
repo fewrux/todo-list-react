@@ -39,26 +39,42 @@ export function Dashboard({}: DashboardProps) {
 
   return (
     <>
-      <Form onSubmit={handleCreateNewTask} className={styles.taskForm}>
-        <Input
-          value={newTask}
-          onChange={handleNewTaskChange}
-          type='text'
-          placeholder='Add a new task'
-        />
-        <Button variant='create' type='submit'>
-          Create
-        </Button>
-      </Form>
-      <section className={styles.container}>
-        {tasks.map(task => (
-          <Task
-            key={task.description}
-            description={task.description}
-            onDeleteTask={deleteTask}
-          />
-        ))}
-      </section>
+      <div className={styles.container}>
+        <Form
+          onSubmit={handleCreateNewTask}
+        >
+          <Input
+            value={newTask}
+            onChange={handleNewTaskChange}
+            type='text'
+            placeholder='Add a new task'
+            />
+          <Button variant='create' type='submit'>
+            Create
+          </Button>
+        </Form>
+        <section>
+          <header className={styles.tasksHeader}>
+            <div>
+              <span>Tarefas criadas</span>
+              <span>{tasks.length}</span>
+            </div>
+            <div>
+              <span>Tarefas concluídas</span>
+              <span>0</span>
+            </div>
+          </header>
+          <div className={styles.tasks}>
+            {tasks.map(task => (
+              <Task
+              key={task.description}
+              description={task.description}
+              onDeleteTask={deleteTask}
+              />
+              ))}
+          </div>
+        </section>
+      </div>
     </>
   )
 }
