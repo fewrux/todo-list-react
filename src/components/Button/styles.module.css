@@ -1,4 +1,4 @@
-.button {
+.buttonCreate {
   color: var(--gray-100);
   background: var(--blue-dark);
 
@@ -14,13 +14,37 @@
   transition: background 0.2s ease;
 }
 
-.button:hover {
+.buttonCreate:hover {
   cursor: pointer;
   background: var(--blue);
 }
 
-@media (max-width: 768px) {
-  .button {
-    width: 100%;
+.buttonDelete {
+  color: var(--gray-300);
+  background: transparent;
+
+  border: none;
+  border-radius: 4px;
+  margin-top: 3px;
+  line-height: 0;
+}
+
+.buttonDelete:hover {
+  cursor: pointer;
+  color: var(--danger);
+}
+
+@media (max-width: 500px) {
+  .buttonCreate {
+    padding: 0.7rem;
+  }
+
+  .buttonCreate > span {
+    display: none;
+  }
+
+  .buttonCreate > svg {
+    width: 1.8rem;
+    height: 1.8rem;
   }
 }

@@ -1,22 +1,23 @@
 import { ButtonHTMLAttributes } from 'react';
-import { PlusCircle } from 'phosphor-react'
+import { PlusCircle, Trash } from 'phosphor-react'
 
 import styles from './styles.module.css';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant: 'create' | 'delete';
   type: 'button' | 'submit' | 'reset' | undefined;
-  children: string;
+  children?: string;
 }
 
-export function Button({type, children, ...rest}: ButtonProps) {
+export function Button({ variant, type, children, ...rest }: ButtonProps) {
   return (
     <button
       type={type}
-      className={styles.button}
+      className={variant === 'create' ? styles.buttonCreate : styles.buttonDelete}
       {...rest}
     >
-      {children}
-      <PlusCircle size={16} />
+      <span>{children}</span>
+      {variant === 'create' ? <PlusCircle size={16} /> : <Trash size={16} />}
     </button>
   )
 }

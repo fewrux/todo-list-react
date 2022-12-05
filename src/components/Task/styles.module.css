@@ -1,0 +1,27 @@
+.task {
+  background: var(--gray-500);
+  border-radius: 8px;
+  padding: 1rem;
+  width: 100%;
+
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.task > div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.todo {
+  color: var(--gray-100);
+}
+
+.done {
+  text-decoration: line-through;
+}
