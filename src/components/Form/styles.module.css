@@ -6,9 +6,3 @@
   width: 100%;
   gap: 0.5rem;
 }
-
-@media (max-width: 768px) {
-  .form {
-    flex-direction: column;
-  }
-}

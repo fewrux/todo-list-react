@@ -1,0 +1,25 @@
+.checkbox {
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-top: 4px;
+  padding: 2px;
+  border: none;
+  border-radius: 50%;
+
+
+  flex-shrink: 0;
+
+  outline: 2px solid var(--blue);
+  background: transparent;
+}
+
+.check {
+  width: 0.8rem;
+  height: 1rem;
+  color: var(--white);
+}
+
+.checkbox[aria-checked="true"] {
+  outline: 2px solid var(--purple-dark);
+  background: var(--purple-dark);
+}
