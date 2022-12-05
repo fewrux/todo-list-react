@@ -5,9 +5,10 @@ import styles from './styles.module.css';
 
 interface TaskProps {
   description: string;
+  onDeleteTask: (taskToDelete: string) => void;
 }
 
-export function Task({ description }: TaskProps) {
+export function Task({ description, onDeleteTask }: TaskProps) {
   const [isDone, setIsDone] = useState(false);
 
   function handleCheckTask() {
@@ -15,7 +16,7 @@ export function Task({ description }: TaskProps) {
   }
 
   function handleDeleteTask() {
-    console.log('delete');
+    onDeleteTask(description);
   }
 
   return (
