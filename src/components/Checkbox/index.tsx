@@ -1,6 +1,5 @@
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
 import { Check } from 'phosphor-react'
-import { FormEventHandler } from 'react';
 import styles from './styles.module.css'
 
 interface CheckboxProps {

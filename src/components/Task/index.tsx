@@ -10,8 +10,12 @@ interface TaskProps {
 export function Task({ description }: TaskProps) {
   const [isDone, setIsDone] = useState(false);
 
-  function handleChange() {
+  function handleCheckTask() {
     setIsDone(!isDone)
+  }
+
+  function handleDeleteTask() {
+    console.log('delete');
   }
 
   return (
@@ -23,10 +27,14 @@ export function Task({ description }: TaskProps) {
       }
     >
       <div>
-        <Checkbox onClick={handleChange} />
+        <Checkbox onClick={handleCheckTask} />
         <span>{description}</span>
       </div>
-      <Button variant='delete' type='button' />
+      <Button
+        onClick={handleDeleteTask}
+        variant='delete'
+        type='button'
+      />
     </article>
   )
 }
