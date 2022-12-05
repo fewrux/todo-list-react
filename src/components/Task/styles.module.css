@@ -21,7 +21,3 @@
 .todo {
   color: var(--gray-100);
 }
-
-.done {
-  text-decoration: line-through;
-}

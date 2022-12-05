@@ -23,13 +23,17 @@ export function Task({ description, onDeleteTask }: TaskProps) {
     <article
       className={
         isDone ?
-        `${styles.task} ${styles.done}` :
+        `${styles.task}` :
         `${styles.task} ${styles.todo}`
       }
     >
       <div>
         <Checkbox onClick={handleCheckTask} />
-        <span>{description}</span>
+        {
+          isDone ?
+          (<del>{description}</del>) :
+          (<span>{description}</span>)
+        }
       </div>
       <Button
         onClick={handleDeleteTask}
