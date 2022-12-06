@@ -1,8 +1,11 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+import { ClipboardText } from 'phosphor-react';
+
 import { Button } from "../Button";
 import { Form } from "../Form";
 import { Input } from "../Input";
 import { Task } from "../Task";
+
 import { useCountDoneTasks } from "../../hooks/useCountDoneTasks";
 
 import styles from './styles.module.css';
@@ -66,16 +69,26 @@ export function Dashboard({}: DashboardProps) {
               <span>{doneTasks} of {tasks.length}</span>
             </div>
           </header>
-          <div className={styles.tasks}>
-            {tasks.map(task => (
-              <Task
+          {
+            tasks.length > 0 ?
+
+            <div className={styles.tasks}>
+              {tasks.map(task => (
+                <Task
                 key={task.description}
                 description={task.description}
                 onCheckTask={setDoneTasks}
                 onDeleteTask={deleteTask}
-              />
-              ))}
-          </div>
+                />
+                ))}
+            </div> :
+
+            <div className={styles.emptyDashboard}>
+              <ClipboardText />
+              <strong>You don't have any tasks registered yet</strong>
+              <span>Create tasks and organize your to-do items</span>
+            </div>
+          }
         </section>
       </div>
     </>

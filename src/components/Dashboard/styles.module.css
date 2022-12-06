@@ -21,6 +21,14 @@
   align-items: center;
 }
 
+.textBlue {
+  color: var(--blue);
+}
+
+.textPurple {
+  color: var(--purple);
+}
+
 .tasksHeader span:first-of-type {
   font-weight: bold;
   font-size: 0.875rem;
@@ -40,4 +48,24 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+}
+
+.emptyDashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4rem;
+
+  border-top: 1px solid var(--gray-400)
+}
+
+.emptyDashboard > svg {
+  color: var(--gray-400);
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.emptyDashboard > strong {
+  margin-bottom: 0.5rem;
 }
