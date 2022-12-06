@@ -5,17 +5,21 @@ import styles from './styles.module.css';
 
 interface TaskProps {
   description: string;
+  onCheckTask: React.Dispatch<React.SetStateAction<number>>;
   onDeleteTask: (taskToDelete: string) => void;
 }
 
-export function Task({ description, onDeleteTask }: TaskProps) {
+export function Task({ description, onDeleteTask, onCheckTask }: TaskProps) {
   const [isDone, setIsDone] = useState(false);
 
   function handleCheckTask() {
+    onCheckTask(state => isDone ? state - 1 : state + 1)
     setIsDone(!isDone)
   }
 
+
   function handleDeleteTask() {
+    onCheckTask(state => isDone ? state - 1 : state)
     onDeleteTask(description);
   }
 

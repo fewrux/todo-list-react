@@ -3,6 +3,7 @@ import { Button } from "../Button";
 import { Form } from "../Form";
 import { Input } from "../Input";
 import { Task } from "../Task";
+import { useCountDoneTasks } from "../../hooks/useCountDoneTasks";
 
 import styles from './styles.module.css';
 
@@ -13,8 +14,9 @@ interface Task {
 interface DashboardProps {}
 
 export function Dashboard({}: DashboardProps) {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const [tasks, setTasks] = useState<Task[]>([{ description: 'Task 1' }, { description: 'Task 2'}]);
   const [newTask, setNewTask] = useState('');
+  const { doneTasks, setDoneTasks } = useCountDoneTasks();
 
   function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>) {
     setNewTask(event.target.value);
@@ -56,20 +58,21 @@ export function Dashboard({}: DashboardProps) {
         <section>
           <header className={styles.tasksHeader}>
             <div>
-              <span>Tarefas criadas</span>
+              <span className={styles.textBlue}>Tasks</span>
               <span>{tasks.length}</span>
             </div>
             <div>
-              <span>Tarefas concluídas</span>
-              <span>0</span>
+              <span className={styles.textPurple}>Concluded</span>
+              <span>{doneTasks} of {tasks.length}</span>
             </div>
           </header>
           <div className={styles.tasks}>
             {tasks.map(task => (
               <Task
-              key={task.description}
-              description={task.description}
-              onDeleteTask={deleteTask}
+                key={task.description}
+                description={task.description}
+                onCheckTask={setDoneTasks}
+                onDeleteTask={deleteTask}
               />
               ))}
           </div>

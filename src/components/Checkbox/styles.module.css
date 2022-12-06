@@ -1,8 +1,8 @@
 .checkbox {
-  width: 1.125rem;
-  height: 1.125rem;
-  margin-top: 4px;
-  padding: 2px;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 2px;
+  padding: 1px;
   border: none;
   border-radius: 50%;
 
@@ -14,7 +14,7 @@
 }
 
 .check {
-  width: 0.8rem;
+  width: 0.9rem;
   height: 1rem;
   color: var(--white);
 }
