@@ -17,7 +17,7 @@ interface Task {
 interface DashboardProps {}
 
 export function Dashboard({}: DashboardProps) {
-  const [tasks, setTasks] = useState<Task[]>([{ description: 'Task 1' }, { description: 'Task 2'}]);
+  const [tasks, setTasks] = useState<Task[]>([]);
   const [newTask, setNewTask] = useState('');
   const { doneTasks, setDoneTasks } = useCountDoneTasks();
 
