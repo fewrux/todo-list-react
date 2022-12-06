@@ -42,6 +42,8 @@ export function Dashboard({}: DashboardProps) {
     setTasks(tasksWithoutDeletedOne);
   }
 
+  const totalOfDoneTasks = tasks.length > 0 ? `${doneTasks} of ${tasks.length}` : '0'
+
   return (
     <>
       <div className={styles.container}>
@@ -67,7 +69,7 @@ export function Dashboard({}: DashboardProps) {
             </div>
             <div>
               <span className={styles.textPurple}>Concluded</span>
-              <span>{doneTasks} of {tasks.length}</span>
+              <span>{totalOfDoneTasks}</span>
             </div>
           </header>
           {
