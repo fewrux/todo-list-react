@@ -1,9 +1,6 @@
-import { Button } from "./components/Button";
-import { Dashboard } from "./components/Dashboard";
-import { Form } from "./components/Form";
-import { Header } from "./components/Header";
-import { Input } from "./components/Input";
 import { Main } from "./components/Main";
+import { Header } from "./components/Header";
+import { Dashboard } from "./components/Dashboard";
 
 import './styles/global.css';
 

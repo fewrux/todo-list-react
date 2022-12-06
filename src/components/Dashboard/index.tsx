@@ -30,7 +30,7 @@ export function Dashboard({}: DashboardProps) {
 
     const taskToCreate: Task = { description: newTask };
 
-    setTasks([...tasks, taskToCreate]);
+    setTasks(state => [...state, taskToCreate]);
     setNewTask('');
   }
 
@@ -53,6 +53,7 @@ export function Dashboard({}: DashboardProps) {
             onChange={handleNewTaskChange}
             type='text'
             placeholder='Add a new task'
+            required
             />
           <Button variant='create' type='submit'>
             Create
